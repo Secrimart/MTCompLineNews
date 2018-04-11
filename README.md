@@ -22,7 +22,7 @@ pod 'MTCompLineNews'
 
 ## Author
 
-rstx_reg@aliyun.com, secrimart@aliyun.com
+secrimart@aliyun.com
 
 ## License
 

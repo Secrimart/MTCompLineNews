@@ -24,6 +24,7 @@
 		752D97EE064CE7EC4369929E /* Pods_MTCompLineNews_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E3267ADBE7894EE532F82A2 /* Pods_MTCompLineNews_Example.framework */; };
 		8431702E43CAED5D7CCC0FD6 /* Pods_MTCompLineNews_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA103F736B2C710D59E03DE7 /* Pods_MTCompLineNews_Tests.framework */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
+		968DA2CA207E1FA30053C259 /* MTOtherCompVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 968DA2C9207E1FA30053C259 /* MTOtherCompVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,11 +63,13 @@
 		606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
 		6B47B687E7B2BBEDC353A8E5 /* Pods-MTCompLineNews_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MTCompLineNews_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MTCompLineNews_Tests/Pods-MTCompLineNews_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		71719F9E1E33DC2100824A3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		865B5561748040114B35DC33 /* MTCompLineNews.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = MTCompLineNews.podspec; path = ../MTCompLineNews.podspec; sourceTree = "<group>"; };
+		865B5561748040114B35DC33 /* MTCompLineNews.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = MTCompLineNews.podspec; path = ../MTCompLineNews.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		968DA2C8207E1F960053C259 /* MTOtherCompVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTOtherCompVC.h; sourceTree = "<group>"; };
+		968DA2C9207E1FA30053C259 /* MTOtherCompVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTOtherCompVC.m; sourceTree = "<group>"; };
 		EA103F736B2C710D59E03DE7 /* Pods_MTCompLineNews_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MTCompLineNews_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F0C08772E90D0EF8692DEB4C /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
-		FFFF6002EE66EF2B97BD2A39 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		F0C08772E90D0EF8692DEB4C /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		FFFF6002EE66EF2B97BD2A39 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,13 +135,15 @@
 		6003F593195388D20070C39A /* Example for MTCompLineNews */ = {
 			isa = PBXGroup;
 			children = (
+				6003F5A8195388D20070C39A /* Images.xcassets */,
+				71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */,
+				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
 				6003F59C195388D20070C39A /* MTAppDelegate.h */,
 				6003F59D195388D20070C39A /* MTAppDelegate.m */,
-				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
+				968DA2C8207E1F960053C259 /* MTOtherCompVC.h */,
+				968DA2C9207E1FA30053C259 /* MTOtherCompVC.m */,
 				6003F5A5195388D20070C39A /* MTViewController.h */,
 				6003F5A6195388D20070C39A /* MTViewController.m */,
-				71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */,
-				6003F5A8195388D20070C39A /* Images.xcassets */,
 				6003F594195388D20070C39A /* Supporting Files */,
 			);
 			name = "Example for MTCompLineNews";
@@ -385,11 +390,33 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-MTCompLineNews_Example/Pods-MTCompLineNews_Example-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/BackButtonHandler/BackButtonHandler.framework",
+				"${BUILT_PRODUCTS_DIR}/JLFramework/JLFramework.framework",
+				"${BUILT_PRODUCTS_DIR}/JRSwizzle/JRSwizzle.framework",
+				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/MJExtension/MJExtension.framework",
+				"${BUILT_PRODUCTS_DIR}/MTBaseObjects/MTBaseObjects.framework",
 				"${BUILT_PRODUCTS_DIR}/MTCompLineNews/MTCompLineNews.framework",
+				"${BUILT_PRODUCTS_DIR}/MTComponent/MTComponent.framework",
+				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/SwipeView/SwipeView.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BackButtonHandler.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JLFramework.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JRSwizzle.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJExtension.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MTBaseObjects.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MTCompLineNews.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MTComponent.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwipeView.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -404,6 +431,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6003F59E195388D20070C39A /* MTAppDelegate.m in Sources */,
+				968DA2CA207E1FA30053C259 /* MTOtherCompVC.m in Sources */,
 				6003F5A7195388D20070C39A /* MTViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
 			);
