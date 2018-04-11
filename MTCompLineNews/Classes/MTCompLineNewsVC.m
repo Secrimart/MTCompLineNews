@@ -59,7 +59,7 @@
     // Do any additional setup after loading the view.
     self.view.contentInsets = self.edgeInsets;
     
-    [self.view addSubview:self.imageViewTitle];
+    [self.view addSubview:self.titleImageView];
     [self.view addSubview:self.viewSwipe];
 }
 
@@ -85,7 +85,7 @@
     if (image) {
         CGFloat width = (image.size.width/image.size.height)*(self.view.view_height - self.view.contentInsets.top - self.view.contentInsets.bottom);
         
-        [self.imageViewTitle mas_remakeConstraints:^(MASConstraintMaker *make) {
+        [self.titleImageView mas_remakeConstraints:^(MASConstraintMaker *make) {
             make.left.mas_equalTo(weakSelf.view.contentInsets.left);
             make.top.mas_equalTo(weakSelf.view.contentInsets.top);
             make.bottom.mas_equalTo(weakSelf.view.contentInsets.bottom);
@@ -94,7 +94,7 @@
         
         [self.viewSwipe mas_remakeConstraints:^(MASConstraintMaker *make) {
             make.top.bottom.right.mas_equalTo(weakSelf.view);
-            make.left.mas_equalTo(weakSelf.imageViewTitle.mas_right).mas_offset(self.controlInterval);
+            make.left.mas_equalTo(weakSelf.titleImageView.mas_right).mas_offset(self.controlInterval);
         }];
     } else {
         [self.viewSwipe mas_remakeConstraints:^(MASConstraintMaker *make) {
@@ -125,6 +125,15 @@
     return _viewSwipe;
 }
 
+- (UIImageView *)titleImageView {
+    if (_titleImageView) return _titleImageView;
+    _titleImageView = [[UIImageView alloc] init];
+    _titleImageView.backgroundColor = [UIColor clearColor];
+    
+    return _titleImageView;
+}
+
+
 - (MTNews *)newsWithIndexPath:(NSInteger)index {
     return (MTNews *)self.viewModel.dataSource[index];
 }
@@ -143,20 +152,14 @@
     UILabel *label = (UILabel *)view;
     
     if (!view) {
-//        view = [[UIView alloc] initWithFrame:swipeView.bounds];
-//        view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-        
         label = [[UILabel alloc] initTitle];
         label.tag = 101;
         label.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
         label.backgroundColor = [UIColor yellowColor];
         label.font = [UIFont descFont];
-        label.textColor = [UIColor dataColor];
-//        [view addSubview:label];
-    }
+        label.textColor = [UIColor dataColor];    }
     
     MTNews *news = [self newsWithIndexPath:index];
-//    label = [view viewWithTag:101];
     label.backgroundColor = [UIColor greenColor];
     label.text = news.title;
     

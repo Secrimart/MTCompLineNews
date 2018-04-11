@@ -14,7 +14,7 @@
 @interface MTCompLineNewsVC : UIViewController<MTComponentProtocol,
 SwipeViewDataSource,SwipeViewDelegate>
 
-@property (nonatomic, strong) UIImageView *imageViewTitle; // 标题图片
+@property (nonatomic, strong) UIImageView *titleImageView; // 标题图片
 
 @property (nonatomic, strong) SwipeView *viewSwipe; // 轮播视图
 
