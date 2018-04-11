@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = 'MTCompLineNews'
   s.version          = '0.1.0'
-  s.summary          = 'A flat style rotation on vertical label component built on MTComponent.'
+  s.summary          = 'A label component by Rotating in the vertical direction and built on MTComponent.'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-A flat style rotation on vertical label component that implements MTComponentProtocol and requires MTTComContainerVC for component integration.
+A label component by Rotating in the vertical direction that implements MTComponentProtocol and requires MTTComContainerVC for component integration.
                        DESC
 
   s.homepage         = 'https://github.com/Secrimart/MTCompLineNews'
