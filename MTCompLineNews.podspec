@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'MTCompLineNews'
-  s.version          = '0.1.1'
+  s.version          = '0.1.2'
   s.summary          = 'A label component by Rotating in the vertical direction and built on MTComponent.'
 
 # This description is used to generate tags and improve search results.

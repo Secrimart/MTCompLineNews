@@ -84,11 +84,11 @@
     UIImage *image = [self lineNewsTitleImage];
     if (image) {
         CGFloat width = (image.size.width/image.size.height)*(self.view.view_height - self.view.contentInsets.top - self.view.contentInsets.bottom);
-        
+        [self.titleImageView setImage:image];
         [self.titleImageView mas_remakeConstraints:^(MASConstraintMaker *make) {
             make.left.mas_equalTo(weakSelf.view.contentInsets.left);
             make.top.mas_equalTo(weakSelf.view.contentInsets.top);
-            make.bottom.mas_equalTo(weakSelf.view.contentInsets.bottom);
+            make.bottom.mas_equalTo(-weakSelf.view.contentInsets.bottom);
             make.width.mas_equalTo(width);
         }];
         
@@ -153,14 +153,13 @@
     
     if (!view) {
         label = [[UILabel alloc] initTitle];
-        label.tag = 101;
         label.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-        label.backgroundColor = [UIColor yellowColor];
         label.font = [UIFont descFont];
-        label.textColor = [UIColor dataColor];    }
+        label.textColor = [UIColor dataColor];
+        
+    }
     
     MTNews *news = [self newsWithIndexPath:index];
-    label.backgroundColor = [UIColor greenColor];
     label.text = news.title;
     
     return label;
