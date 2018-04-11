@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'MTCompLineNews_Example' do
+  pod 'MTCompLineNews', :path => '../'
+
+  target 'MTCompLineNews_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
